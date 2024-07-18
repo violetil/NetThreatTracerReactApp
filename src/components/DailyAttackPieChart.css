@@ -1,0 +1,11 @@
+/* src/components/DailyAttackPieChart.css */
+.daily-attack-pie-chart {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.daily-attack-pie-chart h2 {
+  margin-bottom: 10px;
+}

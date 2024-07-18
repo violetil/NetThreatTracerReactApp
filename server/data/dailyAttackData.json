@@ -1,0 +1,5 @@
+[
+  { "type": "DDoS", "count": 10 },
+  { "type": "SQL Injection", "count": 5 },
+  { "type": "Malware", "count": 3 }
+]

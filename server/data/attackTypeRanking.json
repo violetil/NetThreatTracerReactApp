@@ -1,0 +1,4 @@
+[
+  { "type": "DDoS", "count": 10 },
+  { "type": "SQL Injection", "count": 5 }
+]
