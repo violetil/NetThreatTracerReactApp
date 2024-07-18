@@ -4,6 +4,7 @@ const router = express.Router();
 const Computer = require('../models/Computer');
 const Traffic = require('../models/Traffic');
 const Attack = require('../models/Attack');
+const AttackPath = require('../models/AttackPath')
 
 // 获取所有计算机
 router.get('/', async (req, res) => {
@@ -76,7 +77,7 @@ router.post('/:id/traffic', async (req, res) => {
     }
 
     // 更新攻击类型的记录
-    if (prediction) {
+    if (prediction && (prediction !== 'BENIGN')) {
       let attack = await Attack.findOne({ type: prediction });
       if (attack) {
         attack.count += 1;
@@ -99,6 +100,27 @@ router.get('/:id/traffic', async (req, res) => {
     res.json(trafficData);
   } catch (err) {
     res.status(500).send('Server Error');
+  }
+});
+
+// 更新计算机攻击行为数据
+router.post('/:id/attackPath', async (req, res) => {
+  try {
+    const attackPaths = req.body.map(item => ({ computerId: req.params.id, ...item }));
+    const insertedAttackPaths = await AttackPath.insertMany(attackPaths);
+    res.status(200).send(insertedAttackPaths);
+  } catch (error) {
+    res.status(400).send(error);
+  }
+});
+
+// 获取计算机攻击行为数据
+router.get('/:id/attackPath', async (req, res) => {
+  try {
+    const attackPaths = await AttackPath.find({ computerId: req.params.id });
+    res.status(200).send(attackPaths);
+  } catch (error) {
+    res.status(500).send(error);
   }
 });
 

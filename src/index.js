@@ -9,18 +9,26 @@ import {
   Chart as ChartJS,
   ArcElement,
   BarElement,
+  LineElement,
+  PointElement,
   CategoryScale,
   LinearScale,
+  TimeScale,  // 添加这个
   Tooltip,
   Legend
 } from 'chart.js';
 
-// 注册Chart.js元素和组件
+import 'chartjs-adapter-date-fns';
+
+// 注册 Chart.js 元素和组件
 ChartJS.register(
   ArcElement,
   BarElement,
+  LineElement,
+  PointElement,
   CategoryScale,
   LinearScale,
+  TimeScale,  // 添加这个
   Tooltip,
   Legend
 );
@@ -33,3 +41,4 @@ root.render(
 );
 
 reportWebVitals();
+

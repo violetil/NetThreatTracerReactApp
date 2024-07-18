@@ -11,7 +11,7 @@ const HostRanking = ({ computers }) => {
         {computers.map((computer, index) => (
           <li key={computer._id}>
             <Link to={`/computer/${computer._id}`}>
-              {index + 1}. {computer.name} (IP: {computer.ip}) - 攻击数量: {computer.attackTypes.length}
+              {index + 1}. {computer.name} (IP: {computer.ip}) - {computer.attackTypes.join(', ')}
             </Link>
           </li>
         ))}
