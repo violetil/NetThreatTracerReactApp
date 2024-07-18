@@ -7,7 +7,6 @@ const computersRoute = require('./routes/computers');
 const hostRankingRoute = require('./routes/hostRanking');
 const attackTypeRankingRoute = require('./routes/attackTypeRanking');
 const dailyAttackDataRoute = require('./routes/dailyAttackData');
-const aiRoutes = require('./routes/ai');
 
 const app = express();
 const port = 5000;
@@ -25,7 +24,6 @@ app.use('/api/computers', computersRoute);
 app.use('/api/hostRanking', hostRankingRoute);
 app.use('/api/attackTypeRanking', attackTypeRankingRoute);
 app.use('/api/dailyAttackData', dailyAttackDataRoute);
-app.use('/api/ai', aiRoutes);
 
 app.listen(port, () => {
   console.log(`Server running on http://localhost:${port}`);
