@@ -16,18 +16,18 @@ const ComputerDetail = () => {
 
   useEffect(() => {
     // 获取计算机详细信息
-    fetch(`http://localhost:5000/api/computers/${id}`)
+    fetch(`http://178.128.209.118:5000/api/computers/${id}`)
       .then(response => response.json())
       .then(computer => setComputer(computer));
 
     // 获取流量数据
-    fetch(`http://localhost:5000/api/computers/${id}/traffic`)
+    fetch(`http://178.128.209.118:5000/api/computers/${id}/traffic`)
       .then(response => response.json())
       .then(data => setData(data));
 
     // 获取攻击行为路径数据
-    console.log(`http://localhost:5000/api/computers/${id}/attackPath`);
-    fetch(`http://localhost:5000/api/computers/${id}/attackPath`)
+    console.log(`http://178.128.209.118:5000/api/computers/${id}/attackPath`);
+    fetch(`http://178.128.209.118:5000/api/computers/${id}/attackPath`)
       .then(response => response.json())
       .then(attackPath => { setAttackPath(attackPath); console.log(attackPath) })
       .catch(error => console.error('Error fetching attack path:', error));

@@ -11,7 +11,7 @@ function App() {
       <div className="App">
         <header className="App-header">
           <div className="logo">安全监控系统</div>
-          <a href="http://localhost:5000/download/network-monitoring-software.exe" download className="download-link">
+          <a href="http://178.128.209.118:5000/download/network-monitoring-software.exe" download className="download-link">
             下载网络流量检测软件
           </a>
         </header>

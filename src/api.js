@@ -11,27 +11,27 @@ export const getGeoLocation = async (ip) => {
 };
 
 export const getComputers = async () => {
-  const response = await fetch('http://localhost:5000/api/computers');
+  const response = await fetch('http://178.128.209.118:5000/api/computers');
   return response.json();
 };
 
 export const getHostRanking = async () => {
-  const response = await fetch('http://localhost:5000/api/hostRanking');
+  const response = await fetch('http://178.128.209.118:5000/api/hostRanking');
   return response.json();
 };
 
 export const getAttackTypeRanking = async () => {
-  const response = await fetch('http://localhost:5000/api/attackTypeRanking');
+  const response = await fetch('http://178.128.209.118:5000/api/attackTypeRanking');
   return response.json();
 };
 
 export const getDailyAttackData = async () => {
-  const response = await fetch('http://localhost:5000/api/dailyAttackData');
+  const response = await fetch('http://178.128.209.118:5000/api/dailyAttackData');
   return response.json();
 };
 
 export const getComputerData = async (id) => {
-  const response = await fetch('http://localhost:5000/api/computers/' + id);
+  const response = await fetch('http://178.128.209.118:5000/api/computers/' + id);
   return response.json();
 };
 
